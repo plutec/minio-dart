@@ -138,7 +138,8 @@ class MinioClient {
     if (bucket != null) {
       region ??= await minio.getBucketRegion(bucket);
     }
-
+    print("b2:");
+    print(b2);
     region ??= 'us-east-1';
 
     final request = getBaseRequest(
