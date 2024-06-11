@@ -111,8 +111,6 @@ class MinioResponse extends BaseResponse {
 
 class MinioClient {
   MinioClient(this.minio) {
-    print("minio.b2:");
-    print(minio.b2);
     anonymous = minio.accessKey.isEmpty && minio.secretKey.isEmpty;
     enableSHA256 = !anonymous && !minio.useSSL;
     port = minio.port;
@@ -156,6 +154,8 @@ class MinioClient {
     });
 
     var authorization;
+    print("minio2.b2:");
+    print(minio.b2);
     /*print("b2:");
     print(b2);
     print("this.b2:");
