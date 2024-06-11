@@ -138,8 +138,7 @@ class MinioClient {
     if (bucket != null) {
       region ??= await minio.getBucketRegion(bucket);
     }
-    print("b2:");
-    print(b2);
+    
     region ??= 'us-east-1';
 
     final request = getBaseRequest(
@@ -155,12 +154,14 @@ class MinioClient {
     });
 
     var authorization;
-    if (b2 == null || b2 == false) { 
+    print("b2:");
+    print(b2);
+    if (b2 == null) || (b2 == false) { 
       print("b2 es null");
       authorization = signV4(minio, request, date, region); 
     } else {
       print("b2 existe!");
-      authorization = "kjhasdkjahd";
+      authorization = signB2(minio, request, date, region);
     }
     //final authorization = "";//signV4(minio, request, date, region);
     request.headers['authorization'] = authorization;
