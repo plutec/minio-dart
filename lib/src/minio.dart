@@ -41,7 +41,8 @@ class Minio {
         'Invalid port number ${this.port}',
       );
     }
-
+    print("B2 inside client is:");
+    print(b2);
     _client = MinioClient(this);
   }
 
