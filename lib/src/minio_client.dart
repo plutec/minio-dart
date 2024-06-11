@@ -123,8 +123,6 @@ class MinioClient {
   late bool anonymous;
   late final int port;
 
-  print("B2 in client:");
-  print(this.b2);
   Future<StreamedResponse> _request({
     required String method,
     String? bucket,
@@ -134,7 +132,6 @@ class MinioClient {
     dynamic payload = '',
     Map<String, dynamic>? queries,
     Map<String, String>? headers,
-    bool? b2,
     void Function(int)? onProgress,
   }) async {
     if (bucket != null) {
