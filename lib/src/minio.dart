@@ -42,7 +42,7 @@ class Minio {
       );
     }
     print("B2 inside client is:");
-    print(b2);
+    print(this.b2);
     _client = MinioClient(this);
   }
 
