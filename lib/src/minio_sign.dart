@@ -13,7 +13,7 @@ String signB2(Minio minio,
   String region,
 ) {
 
-
+  return "Basurita";
   //applicationKeyId:applicationKey
   
 }
