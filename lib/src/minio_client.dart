@@ -154,8 +154,11 @@ class MinioClient {
       'x-amz-content-sha256': sha256sum,
     });
 
-    //if (b2 == null || b2 == false) { final authorization = signV4(minio, request, date, region); }
-    final authorization = signV4(minio, request, date, region);
+    if (b2 == null || b2 == false) { 
+      print("b2 es null");
+      final authorization = signV4(minio, request, date, region); 
+    }
+    final authorization = "";//signV4(minio, request, date, region);
     request.headers['authorization'] = authorization;
 
     logRequest(request);
