@@ -111,6 +111,8 @@ class MinioResponse extends BaseResponse {
 
 class MinioClient {
   MinioClient(this.minio) {
+    print("minio.b2:");
+    print(minio.b2);
     anonymous = minio.accessKey.isEmpty && minio.secretKey.isEmpty;
     enableSHA256 = !anonymous && !minio.useSSL;
     port = minio.port;
@@ -129,6 +131,7 @@ class MinioClient {
     String? object,
     String? region,
     String? resource,
+    bool? b2,
     dynamic payload = '',
     Map<String, dynamic>? queries,
     Map<String, String>? headers,
@@ -153,10 +156,10 @@ class MinioClient {
     });
 
     var authorization;
-    print("b2:");
+    /*print("b2:");
     print(b2);
     print("this.b2:");
-    print(this.b2);
+    print(this.b2);*/
     if ((b2 == null) || (b2 == false)) { 
       print("b2 es null");
       authorization = signV4(minio, request, date, region); 
