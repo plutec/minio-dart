@@ -26,6 +26,7 @@ class Minio {
     int? port,
     this.useSSL = true,
     this.sessionToken,
+    this.b2 = false,
     this.region,
     this.enableTrace = false,
   }) : port = port ?? implyPort(useSSL) {
