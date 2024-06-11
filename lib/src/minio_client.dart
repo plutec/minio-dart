@@ -132,7 +132,7 @@ class MinioClient {
     dynamic payload = '',
     Map<String, dynamic>? queries,
     Map<String, String>? headers,
-    bool b2 = false,
+    bool? b2,
     void Function(int)? onProgress,
   }) async {
     if (bucket != null) {
@@ -153,7 +153,7 @@ class MinioClient {
       'x-amz-content-sha256': sha256sum,
     });
 
-    if (b2 == false) { final authorization = signV4(minio, request, date, region); }
+    if (b2 == null || b2 == false) { final authorization = signV4(minio, request, date, region); }
     request.headers['authorization'] = authorization;
 
     logRequest(request);
