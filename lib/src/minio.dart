@@ -67,6 +67,8 @@ class Minio {
   /// If set to true, https is used instead of http. Default is true.
   final bool useSSL;
 
+  final bool b2;
+
   /// accessKey is like user-id that uniquely identifies your account.
   final String accessKey;
 
