@@ -117,7 +117,7 @@ class MinioClient {
   }
 
   final Minio minio;
-  final String userAgent = 'MinIO (Unknown; Unknown) minio-dart/2.0.0';
+  final String userAgent = 'S3 (Unknown; Unknown) s3-dart/2.0.0';
 
   late bool enableSHA256;
   late bool anonymous;
@@ -132,6 +132,7 @@ class MinioClient {
     dynamic payload = '',
     Map<String, dynamic>? queries,
     Map<String, String>? headers,
+    bool b2 = false,
     void Function(int)? onProgress,
   }) async {
     if (bucket != null) {
@@ -152,7 +153,7 @@ class MinioClient {
       'x-amz-content-sha256': sha256sum,
     });
 
-    final authorization = signV4(minio, request, date, region);
+    if (!b2) { final authorization = signV4(minio, request, date, region); }
     request.headers['authorization'] = authorization;
 
     logRequest(request);
