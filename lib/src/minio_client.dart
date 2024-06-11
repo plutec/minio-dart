@@ -115,8 +115,7 @@ class MinioClient {
     enableSHA256 = !anonymous && !minio.useSSL;
     port = minio.port;
   }
-  print("B2 in client:");
-  print(this.b2);
+  
   final Minio minio;
   final String userAgent = 'S3 (Unknown; Unknown) s3-dart/2.0.0';
 
@@ -124,6 +123,8 @@ class MinioClient {
   late bool anonymous;
   late final int port;
 
+  print("B2 in client:");
+  print(this.b2);
   Future<StreamedResponse> _request({
     required String method,
     String? bucket,
