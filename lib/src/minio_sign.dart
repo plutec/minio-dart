@@ -7,6 +7,17 @@ import 'package:minio/src/utils.dart';
 
 const signV4Algorithm = 'AWS4-HMAC-SHA256';
 
+String signB2(Minio minio,
+  MinioRequest request,
+  DateTime requestDate,
+  String region,
+) {
+
+
+  //applicationKeyId:applicationKey
+  
+}
+  
 String signV4(
   Minio minio,
   MinioRequest request,
