@@ -13,7 +13,11 @@ String signB2(Minio minio,
   String region,
 ) {
 
-  return "Basurita";
+
+  var a = minio.accessKey + ":" + minio.secretKey
+  final bytes = utf8.encode(str);
+  final base64Str = base64.encode(bytes);
+  return base64Str;
   //applicationKeyId:applicationKey
   
 }
