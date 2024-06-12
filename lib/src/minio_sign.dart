@@ -18,7 +18,7 @@ String signB2(Minio minio,
   var a = minio.accessKey + ":" + minio.secretKey;
   var bytes = utf8.encode(a);
   var base64str = base64Encode(bytes);
-  return base64str;
+  return "Basic "+base64str;
   //applicationKeyId:applicationKey
   
 }
