@@ -160,7 +160,7 @@ class MinioClient {
     print(b2);
     print("this.b2:");
     print(this.b2);*/
-    if ((b2 == null) || (b2 == false)) { 
+    if ((minio.b2 == null) || (minio.b2 == false)) { 
       print("b2 es null");
       authorization = signV4(minio, request, date, region); 
     } else {
